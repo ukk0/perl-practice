@@ -23,13 +23,11 @@ if ("path/to/file" =~ m|to|) {
     print "Match found!\n";
     }
 
-
 # Without M-pattern
 my $str = "Hello World";
 if ($str =~ /World/) {
     print "Match found!\n";
 }
-
 
 # Metacharacter	    Meaning
 # .	                Matches any character except newline
@@ -46,7 +44,6 @@ if ($email =~ /\w+@\w+\.\w+/) {
     print "Looks like an email address!\n";
 }
 
-
 my $name = "Alice";
 if ($name =~ /^[A-Z][a-z]+$/) {
     print "Valid name!\n";
@@ -62,7 +59,6 @@ if ($text =~ /(\d+)/) {
     print "John's age is $1\n";
 }
 
-
 my $sentence = "Hello, world!";
 while ($sentence =~ /(\w+)/g) {
     print "Found word: $1\n";
@@ -77,11 +73,9 @@ my $input = "Phone: 123-456-7890";
 $input =~ s/\D//g;  
 print "Numbers only: $input\n";
 
-
 my $username = "john_doe@123!";
 $username =~ s/\W//g;
 print "Clean username: $username\n";
-
 
 # Quantifier	    Meaning
 # *	                0 or more times (ab* → "a", "ab", "abb"...)
@@ -97,7 +91,6 @@ if ("word1 word2" =~ /\bword\b/) { print "Exact match!\n"; }    # Matches "word"
 if ("aaa" =~ /a{2,}/) { print "Two or more a's!\n"; }           # Matches "aaa"
 if ("hello" =~ /l+/) { print "Matches consecutive l's!\n"; }    # Matches "ll"
 
-
 # Use parentheses to group parts of regex and capture matches:
 my $text3 = "John Doe, Age: 30";
 if ($text3 =~ /(\w+) (\w+), Age: (\d+)/) {
@@ -105,7 +98,6 @@ if ($text3 =~ /(\w+) (\w+), Age: (\d+)/) {
     print "Last name: $2\n";   # Doe
     print "Age: $3\n";         # 30
 }
-
 
 # Character Class	    Meaning
 # [abc]	                Match a, b, or c
@@ -117,7 +109,6 @@ if ($text3 =~ /(\w+) (\w+), Age: (\d+)/) {
 if ("X" =~ /[A-Z]/) { print "Uppercase letter found!\n"; }
 if ("5" =~ /[^a-zA-Z]/) { print "Not a letter!\n"; }
 
-
 # Lookahead (?=...)
 # Ensures something follows without including it in the match.
 if ("apple123" =~ /\w+(?=\d+)/) { print "Match found!\n"; } # Matches "apple"
@@ -126,7 +117,6 @@ if ("apple123" =~ /\w+(?=\d+)/) { print "Match found!\n"; } # Matches "apple"
 # Lookbehind (?<=...)
 # Ensures something precedes without including it.
 if ("$500" =~ /(?<=\$)\d+/) { print "Matched number after $!\n"; } # Matches "500"
-
 
 # Modifier	    Meaning
 # i	            Case-insensitive (/hello/i matches "Hello")
@@ -137,7 +127,6 @@ if ("$500" =~ /(?<=\$)\d+/) { print "Matched number after $!\n"; } # Matches "50
 
 if ("HELLO" =~ /hello/i) { print "Match case-insensitive!\n"; }
 
-
 # Substitution (s///) Used for replacing text.
 my $string = "The cat sat on the mat";
 $string =~ s/cat/dog/;          # Replace "cat" with "dog"
@@ -145,7 +134,6 @@ print "$string\n";              # The dog sat on the mat
 
 $str =~ s/\bmat\b/matress/g;    # Replace "mat" globally
 print "$string\n";              # The dog sat on the matress
-
 
 # To find all matches, use the g flag:
 my $sentence2 = "apple banana apple orange";
